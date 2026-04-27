@@ -1,0 +1,52 @@
+# prodzCLI Application
+
+A simple command-line interface for productivity tracking, written in Python.
+
+## Prerequisites
+
+- Python 3.x
+- `bell.wav` (included in the project directory)
+
+## Usage
+
+Run the application using Python:
+
+```bash
+python prodz_cli.py [options]
+```
+
+### Command-line Arguments
+
+| Argument | Long Form | Description | Default |
+| :--- | :--- | :--- | :--- |
+| `-w` | `--work` | Work session duration in minutes | 25 |
+| `-b` | `--break` | Short break duration in minutes | 5 |
+| `-lb` | `--long-break` | Long break duration in minutes | 15 |
+| `-c` | `--cycles` | Number of work cycles | 4 |
+| `-h` | `--help` | Show help message and exit | N/A |
+
+### Example
+
+To start a session with 20 minutes of work, a 10-minute short break, and 4 cycles:
+
+```bash
+python prodz_cli.py -w 20 -b 10 -c 4
+```
+
+## Interactive Menu
+
+If you run the application without any arguments, it will launch an interactive menu:
+
+```bash
+python prodz_cli.py
+```
+
+The menu provides options to:
+- Start a default session.
+- Start a custom session (prompts for duration).
+- View statistics (visualizes your productivity history).
+
+## Notification Sound
+
+- The application plays `bell.wav` using system audio tools at the end of each work and break session.
+- If the sound fails to play, it will fall back to a terminal bell sound (`\a`).
